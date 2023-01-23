@@ -1,0 +1,41 @@
+Create a class called "Node"
+    - The class should have two properties: "data" and "next"
+    - "data" should store the data of the node
+    - "next" should store the reference to the next node in the list
+
+Create a class called "LinkedList"
+    - The class should have one property: "head"
+    - "head" should be a reference to the first node in the list
+    
+    - Create a method called "push" that takes in one parameter: "data"
+        - Create a new node with the given "data"
+        - Make the "next" property of the new node point to the current "head"
+        - Make the new node the new "head"
+        
+    - Create a method called "insert_after" that takes in two parameters: "prev_node" and "data"
+        - Check if "prev_node" is not None
+        - If it is None, print an error message and return
+        - Create a new node with the given "data"
+        - Make the "next" property of the new node point to the "next" property of "prev_node"
+        - Make the "next" property of "prev_node" point to the new node
+        
+    - Create a method called "append" that takes in one parameter: "data"
+        - Create a new node with the given "data"
+        - If the "head" is None, make the new node the "head" and return
+        - Create a variable called "last" and set it equal to the "head"
+        - Iterate through the list until "last.next" is None
+        - Make the "next" property of "last" point to the new node
+        
+    - Create a method called "delete_node" that takes in one parameter: "key"
+        - Create a variable called "temp" and set it equal to the "head"
+        - Check if "temp" is not None
+        - If "temp" is not None, check if "temp.data" is equal to "key"
+            - If it is, make the "head" point to "temp.next" and set "temp" to None
+            - Return
+        - Iterate through the list until "temp" is None
+            - If "temp.data" is equal to "key", break out of the loop
+            - Set "prev" to "temp" and "temp" to "temp.next"
+        - Check if "temp" is None
+            - If it is, return
+        - Make the "next" property of "prev" point to the "next" property of "temp"
+        - Set "temp" to None
